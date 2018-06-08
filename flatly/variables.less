@@ -7,31 +7,38 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@gray-base:              #000;
-@gray-darker:            lighten(@gray-base, 13.5%); // #222
-@gray-dark:              #7b8a8b;   // #333
-@gray:                   #95a5a6; // #555
-@gray-light:             #b4bcc2;   // #999
-@gray-lighter:           #ecf0f1; // #eee
+@ink: #1e1e1e;
+@crimson: #A51C30;
+@mortar: #8C8179;
+@parchment: #F3F3F1;
+@slate: #8996A0;
+@shade: #BAC5C6;
+@bluebonnet: #4E84C4;
+@indigo: #293352;
 
-@brand-primary:         #2C3E50;
-@brand-success:         #18BC9C;
-@brand-info:            #3498DB;
-@brand-warning:         #F39C12;
-@brand-danger:          #E74C3C;
+@gray: #8996A0; // #555
+@gray-dark: darken(@gray, 8%);
+@gray-darker: darken(@gray, 16%);
+@gray-light: lighten(@gray, 8%);
+@gray-lighter: lighten(@gray, 16%);
 
+@brand-primary: @mortar;
+@brand-success: #52854C;
+@brand-info: @bluebonnet;
+@brand-warning: #C4961A;
+@brand-danger: #D16103;
 
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
+@body-bg: @parchment;
 //** Global text color on `<body>`.
-@text-color:            @brand-primary;
+@text-color: @ink;
 
 //** Global textual link color.
-@link-color:            @brand-info;
+@link-color:            @bluebonnet;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 10%);
 //** Link hover decoration.
@@ -129,13 +136,13 @@
 //** Default background color used for all tables.
 @table-bg:                      transparent;
 //** Background color used for `.table-striped`.
-@table-bg-accent:               #f9f9f9;
+@table-bg-accent:               @parchment;
 //** Background color used for `.table-hover`.
-@table-bg-hover:                @gray-lighter;
-@table-bg-active:               @table-bg-hover;
+@table-bg-hover:                darken(@parchment, 10%);
+@table-bg-active:               @bluebonnet;
 
 //** Border color for table and cell borders.
-@table-border-color:            @gray-lighter;
+@table-border-color:            @parchment;
 
 
 //== Buttons
@@ -365,12 +372,12 @@
 @navbar-collapse-max-height:       340px;
 
 @navbar-default-color:             #fff;
-@navbar-default-bg:                @brand-primary;
+@navbar-default-bg:                @crimson;
 @navbar-default-border:            transparent;
 
 // Navbar links
 @navbar-default-link-color:                #fff;
-@navbar-default-link-hover-color:          @brand-info;
+@navbar-default-link-hover-color:          darken(@parchment, 10%);
 @navbar-default-link-hover-bg:             transparent;
 @navbar-default-link-active-color:         #fff;
 @navbar-default-link-active-bg:            darken(@navbar-default-bg, 10%);
@@ -378,8 +385,8 @@
 @navbar-default-link-disabled-bg:          transparent;
 
 // Navbar brand label
-@navbar-default-brand-color:               @navbar-default-link-color;
-@navbar-default-brand-hover-color:         @navbar-default-link-hover-color;
+@navbar-default-brand-color:               #fff;
+@navbar-default-brand-hover-color:         darken(@parchment, 10%);
 @navbar-default-brand-hover-bg:            transparent;
 
 // Navbar toggle
@@ -430,8 +437,8 @@
 
 @nav-tabs-link-hover-border-color:          @gray-lighter;
 
-@nav-tabs-active-link-hover-bg:             @body-bg;
-@nav-tabs-active-link-hover-color:          @brand-primary;
+@nav-tabs-active-link-hover-bg:             #fff;
+@nav-tabs-active-link-hover-color:          @bluebonnet;
 @nav-tabs-active-link-hover-border-color:   @gray-lighter;
 
 @nav-tabs-justified-link-border-color:            @gray-lighter;
@@ -439,28 +446,28 @@
 
 //== Pills
 @nav-pills-border-radius:                   @border-radius-base;
-@nav-pills-active-link-hover-bg:            @component-active-bg;
-@nav-pills-active-link-hover-color:         @component-active-color;
+@nav-pills-active-link-hover-bg:            #fff;
+@nav-pills-active-link-hover-color:         @bluebonnet;
 
 
 //== Pagination
 //
 //##
 
-@pagination-color:                     #fff;
-@pagination-bg:                        @brand-primary;
+@pagination-color:                     @ink;
+@pagination-bg:                        @parchment;
 @pagination-border:                    transparent;
 
-@pagination-hover-color:               #fff;
-@pagination-hover-bg:                  darken(@brand-primary, 15%);
+@pagination-hover-color:               @ink;
+@pagination-hover-bg:                  darken(@parchment, 10%);
 @pagination-hover-border:              transparent;
 
 @pagination-active-color:              #fff;
-@pagination-active-bg:                 darken(@brand-primary, 15%);
+@pagination-active-bg:                 @slate;
 @pagination-active-border:             transparent;
 
-@pagination-disabled-color:            @gray-lighter;
-@pagination-disabled-bg:               lighten(@brand-primary, 15%);
+@pagination-disabled-color:            darken(@parchment, 25%);
+@pagination-disabled-bg:               @parchment;
 @pagination-disabled-border:           transparent;
 
 
@@ -713,8 +720,8 @@
 @panel-footer-bg:             @gray-lighter;
 
 @panel-default-text:          @text-color;
-@panel-default-border:        @gray-lighter;
-@panel-default-heading-bg:    @gray-lighter;
+@panel-default-border:        @parchment;
+@panel-default-heading-bg:    @parchment;
 
 @panel-primary-text:          #fff;
 @panel-primary-border:        @brand-primary;
@@ -725,8 +732,8 @@
 @panel-success-heading-bg:    @state-success-bg;
 
 @panel-info-text:             @state-info-text;
-@panel-info-border:           @state-info-border;
-@panel-info-heading-bg:       @state-info-bg;
+@panel-info-border:           @slate;
+@panel-info-heading-bg:       @slate;
 
 @panel-warning-text:          @state-warning-text;
 @panel-warning-border:        @state-warning-border;
